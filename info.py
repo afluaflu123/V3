@@ -56,6 +56,9 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
+MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/CT_Arena")
+FILE_FORWARD = environ.get('FILE_FORWARD',"https://t.me/+MUGQPbQKXAU0OTM1")
+FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+jVP2bbMEe8FiOWE1')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/cvlinkz')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/starley_tg')
@@ -80,9 +83,18 @@ MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
-LANGUAGES = ["malayalam", "tamil", "english", "hindi", "telugu", "kannada", "Dual Audio", "Multi Audio"]
-
+#Language
+LANGUAGES = ["Malayalam - മലയാളം", "Tamil - தமிழ்", "• English •", "Hindi - हिंदी", "Telugu - తెలుగు", "Kannada - ಕನ್ನಡ"]
+#Season
 SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
+
+#Fsub
+auth_channel = environ.get('AUTH_CHANNEL')
+AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
+# Set to False inside the bracket if you don't want to use Request Channel else set it to Channel ID
+REQ_CHANNEL = environ.get("REQ_CHANNEL", False)
+REQ_CHANNEL = int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False
+JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI)
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
