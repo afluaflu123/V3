@@ -84,7 +84,7 @@ PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
 #Language
-LANGUAGES = ["Malayalam - മലയാളം", "Tamil - தமிழ்", "• English •", "Hindi - हिंदी", "Telugu - తెలుగు", "Kannada - ಕನ್ನಡ"]
+LANGUAGES = ["Malayalam", "Tamil", "English", "Hindi", "Telugu", "Kannada"]
 #Season
 SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
 
